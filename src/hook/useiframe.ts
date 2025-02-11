@@ -11,3 +11,26 @@ export const useIFrame = () => {
     isLoading,
   };
 };
+
+type IFrameItem = {
+  url: string;
+  isLoading: boolean;
+};
+
+export const useIfraneNew = () => {
+  const [iframeItems, setIframeItems] = useState<IFrameItem[]>([]);
+
+  const addIframe = (url: string) => {
+    setIframeItems([...iframeItems, { url, isLoading: true }]);
+  };
+
+  const removeIframe = (url: string) => {
+    setIframeItems(iframeItems.filter((item) => item.url !== url));
+  };
+
+  return {
+    iframeItems,
+    addIframe,
+    removeIframe,
+  };
+};
