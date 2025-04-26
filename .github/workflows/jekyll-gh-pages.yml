@@ -29,7 +29,12 @@ jobs:
           cache: 'pnpm'
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: |
+          npm install -g pnpm
+          pnpm --version
+
+      - name: Debug PATH
+        run: echo $PATH
 
       - name: Install dependencies
         run: pnpm install
