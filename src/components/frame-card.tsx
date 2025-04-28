@@ -31,7 +31,7 @@ export const FrameCard = (props: { item: IFrameItem }) => {
   }, [preferedScreenSize, props.item.url]);
 
   return (
-    <div className="border-2 border-secondary-400 bg-secondary-200 rounded-2xl px-4 py-6 flex flex-col gap-4 h-full max-h-[80svh] w-[700px]">
+    <div className="border-2 border-secondary-400 bg-secondary-200 rounded-2xl px-4 py-6 flex flex-col gap-4 h-full max-h-[85svh] w-[700px]">
       <InputWithSearch
         value={props.item.url}
         onChange={(e) => {
@@ -41,7 +41,7 @@ export const FrameCard = (props: { item: IFrameItem }) => {
       {props.item.url ? (
         <div
           ref={containerRef}
-          className="border border-secondary-400 rounded-xl bg-amber-50 overflow-hidden h-screen"
+          className="border border-secondary-400 rounded-xl bg-white overflow-hidden h-screen"
         >
           <iframe
             ref={iframeRef}

@@ -11,7 +11,7 @@ export const Page = () => {
   }
 
   return (
-    <div className="min-h-auto w-full px-6 py-8 grid gap-4 grid-flow-col overflow-scroll">
+    <div className="min-h-auto w-full py-6 grid gap-2 grid-flow-col overflow-scroll">
       {iframeItems.map((item, index) => (
         <FrameCard key={index} item={item} />
       ))}

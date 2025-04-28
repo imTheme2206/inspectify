@@ -42,10 +42,10 @@ export const ButtonWithIcon = (props: {
   const Icon = props.Icon;
   return (
     <button
-      className="flex items-center gap-x-1 bg-primary-400 px-4 py-2 hover:bg-primary-300 transition rounded-r-lg cursor-pointer"
+      className="flex font-semibold items-center gap-x-1 bg-primary-400 px-4 py-2 hover:bg-primary-300 transition rounded-r-lg cursor-pointer"
       onClick={props.onClick}
     >
-      {Icon && <Icon />} {/* Rendering the Icon if it exists */}
+      {Icon && <Icon className="size-4" />}
       {props.children}
     </button>
   );
