@@ -15,18 +15,29 @@ export const SidePanel = () => {
         </h2>
       </div>
       <div className="flex gap-2 items-center">
-        <label>Screen Size:</label>
-        <select
-          className="border border-secondary-400 bg-secondary-100 rounded-lg px-4 py-2"
-          onChange={(e) => preset.setPreferedScreenSize(Number(e.target.value))}
-          value={preset.preferedScreenSize}
-        >
-          {preset.screenSizes.map((size) => (
-            <option key={size.name} value={size.value}>
-              {size.name}
-            </option>
-          ))}
-        </select>
+        <label className="w-fit line-clamp-1">Screen Size:</label>
+        <div className="w-full max-w-40 *:h-10 *:w-40 relative">
+          <select
+            className="absolute inset-0 z-10 border border-secondary-400 bg-secondary-100 rounded-lg px-4 py-2 opacity-0"
+            onChange={(e) =>
+              preset.setPreferedScreenSize(Number(e.target.value))
+            }
+            value={preset.preferedScreenSize}
+          >
+            {preset.screenSizes.map((size) => (
+              <option key={size.name} value={size.value}>
+                {size.name}
+              </option>
+            ))}
+          </select>
+          <div className="absolute inset-0 border border-secondary-400 bg-secondary-100 rounded-lg px-4 py-2 text-center">
+            {
+              preset.screenSizes.find(
+                (size) => size.value === preset.preferedScreenSize
+              )?.name
+            }
+          </div>
+        </div>
       </div>
       <div className="flex flex-col gap-2 h-64">
         <h3>Frames</h3>

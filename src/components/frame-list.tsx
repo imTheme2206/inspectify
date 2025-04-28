@@ -6,16 +6,18 @@ import { Button } from './button';
 export const FrameList = () => {
   const { iframeItems, removeIframe, addIframe } = useIFrame();
   return (
-    <div className="w-full h-full max-h-[550px] flex flex-col overflow-scroll gap-2 p-2 rounded-lg border border-primary-400 bg-secondary-400">
-      {iframeItems.map((item, index) => (
-        <UrlItem
-          key={index}
-          item={item}
-          onClick={() => {
-            removeIframe(item.id);
-          }}
-        />
-      ))}
+    <>
+      <div className="w-full h-full max-h-[550px] flex flex-col overflow-scroll gap-2 p-2 rounded-lg border border-primary-400 bg-secondary-400">
+        {iframeItems.map((item, index) => (
+          <UrlItem
+            key={index}
+            item={item}
+            onClick={() => {
+              removeIframe(item.id);
+            }}
+          />
+        ))}
+      </div>
       <Button
         onClick={() => {
           addIframe();
@@ -24,7 +26,7 @@ export const FrameList = () => {
         <PlusIcon />
         <span>Add Frame</span>
       </Button>
-    </div>
+    </>
   );
 };
 
